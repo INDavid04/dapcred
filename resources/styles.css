@@ -1,0 +1,255 @@
+:root {
+  --fundal: #2B2A24;
+  --brand: #BDAE7D;
+  --cta: #DC7A3B;
+  --casete: #2B2200;
+  --text: #FEF9EC;
+  --albastru: #002B7F;
+  --galben: #FCD116;
+  --rosu: #CE1126;
+}
+
+.h1, h1 {
+  font-size: 6.854rem;
+  color: var(--text);
+}
+
+.h2, h2 {
+  font-size: 4.236rem;
+  color: var(--text);
+}
+
+.h3, h3 {
+  font-size: 2.618rem;
+  color: var(--text);
+}
+
+.h4, h4 {
+  font-size: 1.618rem;
+  color: var(--text);
+}
+
+.h5, h5 {
+  font-size: 1rem;
+  color: var(--text);
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: "Regular";
+  src: url("./resources/fonts/Nunito/static/Nunito-Regular.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Nunito";
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: "Bold";
+  src: url("./resources/fonts/Nunito/static/Nunito-Bold.ttf") format("ttf");
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Nunito", serif;
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+body {
+  display: block;
+  min-height: 100vh;
+  margin: 0;
+  text-rendering: optimizeSpeed;
+}
+
+img, picture {
+  max-width: 100%;
+  display: block;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+strong {
+  font-weight: 900;
+}
+
+a {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+.ScreenReaders {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/*TODO personalizarea butonului*/
+.Button {
+  display: block;
+  padding: 0.5em 1em;
+  background: #627500;
+  color: #fff;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 0.5em;
+}
+.Button:hover {
+  background: #000;
+  color: #fff;
+}
+
+/***********************************************************************/
+.Header {
+  width: 100%;
+  height: auto;
+}
+
+.Navbar {
+  display: flex;
+  justify-content: center;
+  background: var(--casete);
+  transition: top 0.4s;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.Logo {
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+@media (min-width: 1000px) {
+  .Logo {
+    display: flex;
+    left: 0;
+    justify-content: flex-start;
+  }
+}
+
+.LogoH1 {
+  font-size: 2.168rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.Albastru {
+  padding: 0.25rem;
+  border-top: 2px solid var(--albastru);
+  border-bottom: 2px solid var(--albastru);
+}
+
+.Galben {
+  padding: 0.25rem;
+  border-top: 2px solid var(--galben);
+  border-bottom: 2px solid var(--galben);
+}
+
+.Rosu {
+  padding: 0.25rem;
+  border-top: 2px solid var(--rosu);
+  border-bottom: 2px solid var(--rosu);
+}
+
+.Menu {
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.Menu :hover {
+  color: var(--brand);
+}
+
+.List {
+  text-align: center;
+  list-style: none;
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.15rem;
+}
+.List :hover {
+  background: var(--fundal1);
+}
+
+.ListLink {
+  display: block;
+  border: 3px solid var(--brand);
+}
+
+.ListLinkText {
+  font-size: 1.618rem;
+  color: var(--text);
+}
+
+.ListLinkIcon {
+  height: 1.5rem;
+  display: none;
+}
+@media (min-width: 400px) {
+  .ListLinkIcon {
+    display: flex;
+  }
+}
+
+.ListLinkPost {
+  width: 1.618rem;
+  margin: 0 auto;
+}
+
+.ListLinkHome {
+  width: 1.618rem;
+  margin: 0 auto;
+}
+
+.ListLinkCalendar {
+  width: 1.618rem;
+  margin: 0 auto;
+}
+
+.Content {
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: var(--fundal);
+  padding-top: 100px;
+}
+
+.LogoMobile {
+  text-align: center;
+}
+
+.LogoMobileText1 {
+  color: var(--albastru);
+  font-size: clamp(2.618rem, 16vw, 6.854rem);
+}
+
+.LogoMobileText2 {
+  color: var(--galben);
+  font-size: clamp(2.618rem, 16vw, 6.854rem);
+}
+
+.LogoMobileText3 {
+  color: var(--rosu);
+  font-size: clamp(2.618rem, 16vw, 6.854rem);
+}/*# sourceMappingURL=styles.css.map */

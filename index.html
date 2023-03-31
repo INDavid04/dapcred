@@ -1,50 +1,74 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="ro">
     <head>
         <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-        <link rel="stylesheet" href="background_styles.css">
-        <link rel = "stylesheet" href="./style.css"/>
-        <script src="./script.js" defer></script>
+        <link rel = "stylesheet" href="./resources/styles.css">
+        <script src="./resources/script.js" defer></script>
 
         <title>MarșulApărătorilorCredinței</title>
     </head>
 
     <body>
-        <nav class="navbar">
-            <div class="brand-title">
-                <div class="cuv-albastru">Marșul</div>
-                <div class="cuv-galben">Apărătorilor</div>
-                <div class="cuv-rosu">Credinței</div>
-            </div>
-            <div class="navbar-links">
-                <ul>
-                    <li><a href="#">Acasă</a></li>
-                    <li><a href="#">Postări</a></li>
-                    <li><a href="#">Calendar</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-            <a href="#" class="toggle-button">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </a>
-        </nav>
+        <div class="Header">
+            <nav class="Navbar" id="navbar">
+                <a href="index.html" class="Logo">
+                    <h1 class="LogoH1"><span class="Albastru">Marșul</span></h1>
+                    <h1 class="LogoH1"><span class="Galben">Apărătorilor</span></h1>
+                    <h1 class="LogoH1"><span class="Rosu">Credinței</span></h1>
+                </a>
+                <ol class="Menu">
+                    <li class="List">
+                        <a href="#" class="ListLink">
+                            <span class="ListLinkIcon">
+                                <img class="ListLinkPost" src="./resources/svg/noun-post-1604121.svg" alt="Postări">
+                            </span>
+                            <span class="ListLinkText">Postări</span>
+                        </a>
+                    </li>
+                    <li class="List ListActive">
+                        <a href="#" class="ListLink">
+                            <span class="ListLinkIcon">
+                                <img class="ListLinkHome" src="./resources/svg/noun-church-1557960 1.svg" alt="Acasă">
+                            </span>
+                            <span class="ListLinkText">Acasă</span>
+                        </a>
+                    </li>
+                    <li class="List">
+                        <a href="#" class="ListLink">
+                            <span class="ListLinkIcon">
+                                <img class="ListLinkCalendar" src="./resources/svg/noun-calendar-394665.svg" alt="Calendar">
+                            </span>
+                            <span class="ListLinkText">Calendar</span>
+                        </a>
+                    </li>
+                </ol>
+            </nav>
+        </div>
 
-        <p class="test-paragraf">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna 
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-            ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-            Duis aute irure dolor in reprehenderit in voluptate velit 
-            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-            occaecat cupidatat non proident, sunt in culpa qui officia 
-            deserunt mollit anim id est laborum.
-        </p>
+        <main class="Content">
+            <div class="LogoMobile">
+                <h1 class="LogoMobileText1">Marșul</h1>
+                <h1 class="LogoMobileText2">Apărătorilor</h1>
+                <h1 class="LogoMobileText3">Credinței</h1>
+            </div>
+
+            <div class="Carousel">
+                <div class="Arrow">
+                    <div class="Left"> < </div>
+                    <div class="Right"> > </div>
+                </div>
+                <div class="Picture">
+                    <img src="./resources/jpg/poza.jpg" alt="Prima poza din caruselul de poze din primul eveniment!">
+                </div>
+            </div>
+        </main>
+
+        <div class="Footer">
+
+        </div>
     </body>
 </html>
