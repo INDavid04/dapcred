@@ -5,12 +5,13 @@
     --albastru: #002B7F; --galben: #FCD116; --rosu: #CE1126;
 }
 
-.h1, h1 { font-size: 6.854rem; color: var(--text) }
-.h2, h2 { font-size: 4.236rem; color: var(--text) }
-.h3, h3 { font-size: 2.618rem; color: var(--text) }
-.h4, h4 { font-size: 1.618rem; color: var(--text) }
-.h5, h5 { font-size: 1.000rem; color: var(--text) }
+.h1, h1 { font-size: clamp(11.09rem, 10vw, 6.854rem); color: var(--text) }
+.h2, h2 { font-size: clamp(6.854rem, 10vw, 4.236rem); color: var(--text) }
+.h3, h3 { font-size: clamp(4.236rem, 10vw, 2.618rem); color: var(--text) }
+.h4, h4 { font-size: clamp(2.618rem, 10vw, 1.618rem); color: var(--text) }
+.h5, h5 { font-size: clamp(1.618rem, 10vw, 1.000rem); color: var(--text) }
 
+/*/ De schimbat fontul
 @font-face {
 	font-family: 'Nunito';
 	font-weight: 400;
@@ -26,7 +27,7 @@
 	font-style: normal;
 	font-named-instance: 'Bold';
 	src: url("./resources/fonts/Nunito/static/Nunito-Bold.ttf") format("ttf");
-}
+}*/
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -47,9 +48,8 @@ a { color: var(--brand); text-decoration: none; }
 .WaveStart { transform: rotateX(0deg); }
 .WaveEnd { transform: rotateX(180deg); }
 
-/*TODO personalizarea butonului*/
-.Button { display: block; padding: 0.5em 1em; background: #627500; color: #fff; font-weight: normal; text-transform: uppercase; text-decoration: none; text-align: center; border-radius: 0.5em;
-	&:hover { background: #000; color: #fff; }
+.Button { display: block; padding: 0.25rem 1rem; background: var(--fundal); color: var(--cta); font-weight: normal; text-decoration: none; text-align: center; border-radius: 0.4rem;
+	&:hover { background: var(--casete); color: var(--text); }
 }
 
 /***********************************************************************/
