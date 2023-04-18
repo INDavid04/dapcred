@@ -10,46 +10,53 @@
 }
 
 .h1, h1 {
-  font-size: clamp(11.09rem, 10vw, 6.854rem);
+  font-size: clamp(6.854rem, 10vw, 11.09rem);
   color: var(--text);
 }
 
 .h2, h2 {
-  font-size: clamp(6.854rem, 10vw, 4.236rem);
+  font-size: clamp(4.236rem, 10vw, 6.854rem);
   color: var(--text);
 }
 
 .h3, h3 {
-  font-size: clamp(4.236rem, 10vw, 2.618rem);
+  font-size: clamp(2.618rem, 10vw, 4.236rem);
   color: var(--text);
 }
 
 .h4, h4 {
-  font-size: clamp(2.618rem, 10vw, 1.618rem);
+  font-size: clamp(1.618rem, 10vw, 2.618rem);
   color: var(--text);
 }
 
 .h5, h5 {
-  font-size: clamp(1.618rem, 10vw, 1rem);
+  font-size: clamp(1rem, 10vw, 1.618rem);
   color: var(--text);
 }
 
+/*/ De schimbat fontul
 @font-face {
-  font-family: "Nunito";
-  font-weight: 400;
-  font-display: swap;
-  font-style: normal;
-  font-named-instance: "Regular";
-  src: url("./resources/fonts/Nunito/static/Nunito-Regular.ttf") format("ttf");
+	font-family: 'Nunito';
+	font-weight: 400;
+	font-display: swap;
+	font-style: normal;
+	font-named-instance: 'Regular';
+	src: url("./resources/fonts/Nunito/static/Nunito-Regular.ttf") format("ttf");
 }
 @font-face {
-  font-family: "Nunito";
-  font-weight: 700;
-  font-display: swap;
-  font-style: normal;
-  font-named-instance: "Bold";
-  src: url("./resources/fonts/Nunito/static/Nunito-Bold.ttf") format("ttf");
-}
+	font-family: 'Nunito';
+	font-weight: 700;
+	font-display: swap;
+	font-style: normal;
+	font-named-instance: 'Bold';
+	src: url("./resources/fonts/Nunito/static/Nunito-Bold.ttf") format("ttf");
+}*/
+/*/ Z-index hierarhy
+    1: Content
+    2: Item-1
+    3: Item-2 to Item-16
+    4: Header
+*/
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -57,7 +64,7 @@
 html {
   font-family: "Nunito", serif;
   font-size: 16px;
-  line-height: 1.5em;
+  line-height: 1.5rem;
 }
 
 body {
@@ -106,37 +113,31 @@ a {
   transform: rotateX(180deg);
 }
 
-/*TODO personalizarea butonului*/
 .Button {
   display: block;
-  padding: 0.5em 1em;
-  background: #627500;
-  color: #fff;
+  padding: 0.25rem 1rem;
+  background: var(--fundal);
+  color: var(--cta);
   font-weight: normal;
-  text-transform: uppercase;
   text-decoration: none;
   text-align: center;
-  border-radius: 0.5em;
+  border-radius: 0.4rem;
 }
 .Button:hover {
-  background: #000;
-  color: #fff;
+  background: var(--casete);
+  color: var(--text);
 }
 
 /***********************************************************************/
-.Header {
-  width: 100%;
-  height: auto;
-}
-
 .Navbar {
   display: flex;
   justify-content: center;
   background: var(--casete);
-  transition: top 0.4s;
   position: fixed;
   top: 0;
   width: 100%;
+  height: auto;
+  z-index: 4;
 }
 
 .Logo {
@@ -237,7 +238,7 @@ a {
 }
 
 .Content {
-  z-index: -1;
+  z-index: 1;
   padding-top: 100px;
 }
 
@@ -300,8 +301,7 @@ a {
   left: 30px;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  rotate: 135deg;
+  transform: translateY(-50%) rotate(135deg);
 }
 
 .ArrowNext {
@@ -318,146 +318,146 @@ a {
 .Item-1 {
   z-index: 2;
   opacity: 1;
-  background: url("/resources/p/1.webp");
+  background: url("./p/1.webp");
 }
 @media (min-width: 1080px) {
   .Item-1 {
-    background: url("/resources/d/1.webp");
+    background: url("./d/1.webp");
   }
 }
 
 .Item-2 {
-  background: url("/resources/p/2.webp");
+  background: url("./p/2.webp");
 }
 @media (min-width: 1080px) {
   .Item-2 {
-    background: url("/resources/d/2.webp");
+    background: url("./d/2.webp");
   }
 }
 
 .Item-3 {
-  background: url("/resources/p/3.webp");
+  background: url("./p/3.webp");
 }
 @media (min-width: 1080px) {
   .Item-3 {
-    background: url("/resources/d/3.webp");
+    background: url("./d/3.webp");
   }
 }
 
 .Item-4 {
-  background: url("/resources/p/4.webp");
+  background: url("./p/4.webp");
 }
 @media (min-width: 1080px) {
   .Item-4 {
-    background: url("/resources/d/4.webp");
+    background: url("./d/4.webp");
   }
 }
 
 .Item-5 {
-  background: url("/resources/p/5.webp");
+  background: url("./p/5.webp");
 }
 @media (min-width: 1080px) {
   .Item-5 {
-    background: url("/resources/d/5.webp");
+    background: url("./d/5.webp");
   }
 }
 
 .Item-6 {
-  background: url("/resources/p/6.webp");
+  background: url("./p/5.webp");
 }
 @media (min-width: 1080px) {
   .Item-6 {
-    background: url("/resources/d/6.webp");
+    background: url("./d/6.webp");
   }
 }
 
 .Item-7 {
-  background: url("/resources/p/7.webp");
+  background: url("./p/7.webp");
 }
 @media (min-width: 1080px) {
   .Item-7 {
-    background: url("/resources/d/7.webp");
+    background: url("./d/7.webp");
   }
 }
 
 .Item-8 {
-  background: url("/resources/p/8.webp");
+  background: url("./p/8.webp");
 }
 @media (min-width: 1080px) {
   .Item-8 {
-    background: url("/resources/d/8.webp");
+    background: url("./d/8.webp");
   }
 }
 
 .Item-9 {
-  background: url("/resources/p/9.webp");
+  background: url("./p/9.webp");
 }
 @media (min-width: 1080px) {
   .Item-9 {
-    background: url("/resources/d/9.webp");
+    background: url("./d/9.webp");
   }
 }
 
 .Item-10 {
-  background: url("/resources/p/10.webp");
+  background: url("./p/10.webp");
 }
 @media (min-width: 1080px) {
   .Item-10 {
-    background: url("/resources/d/10.webp");
+    background: url("./d/10.webp");
   }
 }
 
 .Item-11 {
-  background: url("/resources/p/11.webp");
+  background: url("./p/11.webp");
 }
 @media (min-width: 1080px) {
   .Item-11 {
-    background: url("/resources/d/11.webp");
+    background: url("./d/11.webp");
   }
 }
 
 .Item-12 {
-  background: url("/resources/p/12.webp");
+  background: url("./p/12.webp");
 }
 @media (min-width: 1080px) {
   .Item-12 {
-    background: url("/resources/d/12.webp");
+    background: url("./d/12.webp");
   }
 }
 
 .Item-13 {
-  background: url("/resources/p/13.webp");
+  background: url("./p/13.webp");
 }
 @media (min-width: 1080px) {
   .Item-13 {
-    background: url("/resources/d/13.webp");
+    background: url("./d/13.webp");
   }
 }
 
 .Item-14 {
-  background: url("/resources/p/14.webp");
+  background: url("./p/14.webp");
 }
 @media (min-width: 1080px) {
   .Item-14 {
-    background: url("/resources/d/14.webp");
+    background: url("./d/14.webp");
   }
 }
 
 .Item-15 {
-  background: url("/resources/p/15.webp");
+  background: url("./p/15.webp");
 }
 @media (min-width: 1080px) {
   .Item-15 {
-    background: url("/resources/d/15.webp");
+    background: url("./d/15.webp");
   }
 }
 
 .Item-16 {
-  background: url("/resources/p/16.webp");
+  background: url("./p/16.webp");
 }
 @media (min-width: 1080px) {
   .Item-16 {
-    background: url("/resources/d/16.webp");
+    background: url("./d/16.webp");
   }
 }
 
@@ -472,6 +472,60 @@ a {
 #item-2:target ~ .Item-2, #item-3:target ~ .Item-3, #item-4:target ~ .Item-4, #item-5:target ~ .Item-5, #item-6:target ~ .Item-6, #item-7:target ~ .Item-7, #item-8:target ~ .Item-8, #item-9:target ~ .Item-9, #item-10:target ~ .Item-10, #item-11:target ~ .Item-11, #item-12:target ~ .Item-12, #item-13:target ~ .Item-13, #item-14:target ~ .Item-14, #item-15:target ~ .Item-15, #item-16:target ~ .Item-16 {
   z-index: 3;
   opacity: 1;
+}
+
+#accordion {
+  color: var(--text);
+  margin: 4rem auto;
+  padding: 0;
+  width: 90%;
+  max-width: 30rem;
+}
+
+#accordion li {
+  list-style: none;
+  margin-bottom: 1.5rem;
+  background: var(--casete);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  line-height: 1.5rem;
+}
+
+.AccordionTitle {
+  font-size: clamp(1.618rem, 6vw, 2.618rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.AccordionTitle + input[type=radio] {
+  display: none;
+}
+
+.Down {
+  transform: rotate(90deg);
+  font-size: clamp(1.618rem, 4vw, 2.618rem);
+  color: var(--cta);
+  margin: 1rem;
+}
+.Down :hover {
+  transform: rotate(180deg);
+}
+
+.AccordionContent {
+  background: var(--fundal);
+  padding-left: 1.5rem;
+  border-radius: 0.5rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+
+.AccordionTitle + input[type=radio]:checked + .AccordionContent {
+  max-height: 40rem;
 }
 
 .Footer {
