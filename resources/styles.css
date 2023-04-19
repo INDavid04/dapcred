@@ -10,47 +10,46 @@
 }
 
 .h1, h1 {
-  font-size: clamp(6.854rem, 10vw, 11.09rem);
+  font-size: 6.854rem;
   color: var(--text);
 }
 
 .h2, h2 {
-  font-size: clamp(4.236rem, 10vw, 6.854rem);
+  font-size: 4.236rem;
   color: var(--text);
 }
 
 .h3, h3 {
-  font-size: clamp(2.618rem, 10vw, 4.236rem);
+  font-size: 2.618rem;
   color: var(--text);
 }
 
 .h4, h4 {
-  font-size: clamp(1.618rem, 10vw, 2.618rem);
+  font-size: 1.618rem;
   color: var(--text);
 }
 
 .h5, h5 {
-  font-size: clamp(1rem, 10vw, 1.618rem);
+  font-size: 1rem;
   color: var(--text);
 }
 
-/*/ De schimbat fontul
 @font-face {
-	font-family: 'Nunito';
-	font-weight: 400;
-	font-display: swap;
-	font-style: normal;
-	font-named-instance: 'Regular';
-	src: url("./resources/fonts/Nunito/static/Nunito-Regular.ttf") format("ttf");
+  font-family: "Bitter";
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: "Regular";
+  src: url("./Bitter-VariableFont_wght.woff2") format("woff2");
 }
 @font-face {
-	font-family: 'Nunito';
-	font-weight: 700;
-	font-display: swap;
-	font-style: normal;
-	font-named-instance: 'Bold';
-	src: url("./resources/fonts/Nunito/static/Nunito-Bold.ttf") format("ttf");
-}*/
+  font-family: "Bitter";
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: "Bold";
+  src: url("./Bitter-VariableFont_wght.woff2") format("woff2");
+}
 /*/ Z-index hierarhy
     1: Content
     2: Item-1
@@ -62,7 +61,7 @@
 }
 
 html {
-  font-family: "Nunito", serif;
+  font-family: "Bitter", serif;
   font-size: 16px;
   line-height: 1.5rem;
 }
@@ -242,29 +241,58 @@ a {
   padding-top: 100px;
 }
 
+.HeroSection {
+  display: block;
+  padding: 2rem;
+}
+@media (min-width: 1440px) {
+  .HeroSection {
+    display: flex;
+    align-items: center;
+  }
+}
+
 .LogoMobile {
   text-align: center;
+  line-height: clamp(1.618rem, 7vw, 2.618rem);
+}
+@media (min-width: 1080px) {
+  .LogoMobile {
+    text-align: left;
+  }
 }
 
 .LogoMobileText1 {
   color: var(--albastru);
-  -webkit-text-stroke: 0.2px var(--text);
+  -webkit-text-stroke: 0.4 var(--casete);
   font-size: clamp(2.618rem, 16vw, 6.854rem);
 }
 
 .LogoMobileText2 {
   color: var(--galben);
-  -webkit-text-stroke: 0.2px var(--text);
+  -webkit-text-stroke: 0.4px var(--casete);
   font-size: clamp(2.618rem, 16vw, 6.854rem);
 }
 
 .LogoMobileText3 {
   color: var(--rosu);
-  -webkit-text-stroke: 0.2px var(--text);
+  -webkit-text-stroke: 0.4px var(--casete);
   font-size: clamp(2.618rem, 16vw, 6.854rem);
 }
 
-/*TODO Personalizarea caruselului */
+.Description {
+  padding: 1rem;
+  line-height: 2.618rem;
+  font-weight: 400;
+  color: var(--text);
+  font-size: 1.618rem;
+}
+@media (min-width: 1440px) {
+  .Description {
+    padding-left: 2rem;
+  }
+}
+
 .Carousel {
   height: 222px;
   width: 333px;
@@ -272,7 +300,7 @@ a {
   display: block;
   margin: 50px auto;
 }
-@media (min-width: 1080px) {
+@media (min-width: 750px) {
   .Carousel {
     height: 333px;
     width: 555px;
@@ -287,28 +315,45 @@ a {
   right: 0;
   padding: 25px 50px;
   opacity: 0;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease;
 }
 
 .Arrow {
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 12px;
+  font-size: 1.618rem;
+  color: var(--cta);
+  padding: 1rem;
+  background: var(--casete);
+  border-radius: 4rem;
+}
+@media (min-width: 750px) {
+  .Arrow {
+    padding: 30% 1rem;
+    font-size: 4.236rem;
+  }
 }
 
 .ArrowPrev {
-  left: 30px;
+  left: 1rem;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%) rotate(135deg);
+  transform: translateY(-50%) rotate(180deg);
+}
+@media (min-width: 750px) {
+  .ArrowPrev {
+    left: -4.5rem;
+  }
 }
 
 .ArrowNext {
-  right: 30px;
+  right: 1rem;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%) rotate(-45deg);
+  transform: translateY(-50%) rotate(0deg);
+}
+@media (min-width: 750px) {
+  .ArrowNext {
+    right: -4.5rem;
+  }
 }
 
 [id^=item] {
@@ -320,7 +365,7 @@ a {
   opacity: 1;
   background: url("./p/1.webp");
 }
-@media (min-width: 1080px) {
+@media (min-width: 750px) {
   .Item-1 {
     background: url("./d/1.webp");
   }
@@ -329,7 +374,7 @@ a {
 .Item-2 {
   background: url("./p/2.webp");
 }
-@media (min-width: 1080px) {
+@media (min-width: 750px) {
   .Item-2 {
     background: url("./d/2.webp");
   }
@@ -338,7 +383,7 @@ a {
 .Item-3 {
   background: url("./p/3.webp");
 }
-@media (min-width: 1080px) {
+@media (min-width: 750px) {
   .Item-3 {
     background: url("./d/3.webp");
   }
@@ -347,7 +392,7 @@ a {
 .Item-4 {
   background: url("./p/4.webp");
 }
-@media (min-width: 1080px) {
+@media (min-width: 750px) {
   .Item-4 {
     background: url("./d/4.webp");
   }
@@ -356,7 +401,7 @@ a {
 .Item-5 {
   background: url("./p/5.webp");
 }
-@media (min-width: 1080px) {
+@media (min-width: 750px) {
   .Item-5 {
     background: url("./d/5.webp");
   }
@@ -365,7 +410,7 @@ a {
 .Item-6 {
   background: url("./p/5.webp");
 }
-@media (min-width: 1080px) {
+@media (min-width: 750px) {
   .Item-6 {
     background: url("./d/6.webp");
   }
@@ -374,7 +419,7 @@ a {
 .Item-7 {
   background: url("./p/7.webp");
 }
-@media (min-width: 1080px) {
+@media (min-width: 750px) {
   .Item-7 {
     background: url("./d/7.webp");
   }
@@ -383,7 +428,7 @@ a {
 .Item-8 {
   background: url("./p/8.webp");
 }
-@media (min-width: 1080px) {
+@media (min-width: 750px) {
   .Item-8 {
     background: url("./d/8.webp");
   }
@@ -392,7 +437,7 @@ a {
 .Item-9 {
   background: url("./p/9.webp");
 }
-@media (min-width: 1080px) {
+@media (min-width: 750px) {
   .Item-9 {
     background: url("./d/9.webp");
   }
@@ -401,7 +446,7 @@ a {
 .Item-10 {
   background: url("./p/10.webp");
 }
-@media (min-width: 1080px) {
+@media (min-width: 750px) {
   .Item-10 {
     background: url("./d/10.webp");
   }
@@ -410,7 +455,7 @@ a {
 .Item-11 {
   background: url("./p/11.webp");
 }
-@media (min-width: 1080px) {
+@media (min-width: 750px) {
   .Item-11 {
     background: url("./d/11.webp");
   }
@@ -419,7 +464,7 @@ a {
 .Item-12 {
   background: url("./p/12.webp");
 }
-@media (min-width: 1080px) {
+@media (min-width: 750px) {
   .Item-12 {
     background: url("./d/12.webp");
   }
@@ -428,7 +473,7 @@ a {
 .Item-13 {
   background: url("./p/13.webp");
 }
-@media (min-width: 1080px) {
+@media (min-width: 750px) {
   .Item-13 {
     background: url("./d/13.webp");
   }
@@ -437,7 +482,7 @@ a {
 .Item-14 {
   background: url("./p/14.webp");
 }
-@media (min-width: 1080px) {
+@media (min-width: 750px) {
   .Item-14 {
     background: url("./d/14.webp");
   }
@@ -446,7 +491,7 @@ a {
 .Item-15 {
   background: url("./p/15.webp");
 }
-@media (min-width: 1080px) {
+@media (min-width: 750px) {
   .Item-15 {
     background: url("./d/15.webp");
   }
@@ -455,7 +500,7 @@ a {
 .Item-16 {
   background: url("./p/16.webp");
 }
-@media (min-width: 1080px) {
+@media (min-width: 750px) {
   .Item-16 {
     background: url("./d/16.webp");
   }
@@ -497,6 +542,7 @@ a {
   align-items: center;
   justify-content: space-between;
   font-weight: 500;
+  line-height: 3rem;
   cursor: pointer;
   color: var(--text);
 }
@@ -507,7 +553,7 @@ a {
 
 .Down {
   transform: rotate(90deg);
-  font-size: clamp(1.618rem, 4vw, 2.618rem);
+  font-size: clamp(2.618rem, 16vw, 4.236rem);
   color: var(--cta);
   margin: 1rem;
 }

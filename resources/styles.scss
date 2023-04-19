@@ -5,29 +5,28 @@
     --albastru: #002B7F; --galben: #FCD116; --rosu: #CE1126;
 }
 
-.h1, h1 { font-size: clamp(6.854rem, 10vw, 11.09rem); color: var(--text) }
-.h2, h2 { font-size: clamp(4.236rem, 10vw, 6.854rem); color: var(--text) }
-.h3, h3 { font-size: clamp(2.618rem, 10vw, 4.236rem); color: var(--text) }
-.h4, h4 { font-size: clamp(1.618rem, 10vw, 2.618rem); color: var(--text) }
-.h5, h5 { font-size: clamp(1.000rem, 10vw, 1.618rem); color: var(--text) }
+.h1, h1 { font-size: 6.854rem; color: var(--text) }
+.h2, h2 { font-size: 4.236rem; color: var(--text) }
+.h3, h3 { font-size: 2.618rem; color: var(--text) }
+.h4, h4 { font-size: 1.618rem; color: var(--text) }
+.h5, h5 { font-size: 1.000rem; color: var(--text) }
 
-/*/ De schimbat fontul
 @font-face {
-	font-family: 'Nunito';
+	font-family: 'Bitter';
 	font-weight: 400;
 	font-display: swap;
 	font-style: normal;
 	font-named-instance: 'Regular';
-	src: url("./resources/fonts/Nunito/static/Nunito-Regular.ttf") format("ttf");
+	src: url("./Bitter-VariableFont_wght.woff2") format("woff2");
 }
 @font-face {
-	font-family: 'Nunito';
+	font-family: 'Bitter';
 	font-weight: 700;
 	font-display: swap;
 	font-style: normal;
 	font-named-instance: 'Bold';
-	src: url("./resources/fonts/Nunito/static/Nunito-Bold.ttf") format("ttf");
-}*/
+	src: url("./Bitter-VariableFont_wght.woff2") format("woff2");
+}
 
 /*/ Z-index hierarhy
     1: Content
@@ -38,7 +37,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { font-family: 'Nunito', serif; font-size: 16px; line-height: 1.5rem; }
+html { font-family: 'Bitter', serif; font-size: 16px; line-height: 1.5rem; }
 
 body { display: block; background: var(--fundal); min-height: 100vh; margin: 0; text-rendering: optimizeSpeed; }
 
@@ -60,7 +59,6 @@ a { color: var(--brand); text-decoration: none; }
 }
 
 /***********************************************************************/
-
 
 .Navbar { display: flex; justify-content: center; background: var(--casete); position: fixed; top: 0; width: 100%; height: auto; z-index: 4; }
 
@@ -88,69 +86,82 @@ a { color: var(--brand); text-decoration: none; }
                     .ListLinkCalendar { width: 1.618rem; margin: 0 auto; }
 
 .Content { z-index: 1; padding-top: 100px; }
-    .LogoMobile { text-align: center; } 
-        .LogoMobileText1 { color: var(--albastru);-webkit-text-stroke: 0.2px var(--text); font-size: clamp(2.618rem, 16vw, 6.854rem); }
-        .LogoMobileText2 { color: var(--galben); -webkit-text-stroke: 0.2px var(--text); font-size: clamp(2.618rem, 16vw, 6.854rem); }
-        .LogoMobileText3 { color: var(--rosu);  -webkit-text-stroke: 0.2px var(--text); font-size: clamp(2.618rem, 16vw, 6.854rem); }
+    .HeroSection { display: block; padding: 2rem;
+    @media (min-width: 1440px) { display: flex; align-items: center; }
+    }
+        .LogoMobile { text-align: center; line-height: clamp(1.618rem, 7vw, 2.618rem); 
+        @media (min-width: 1080px) { text-align: left; }
+        } 
+            .LogoMobileText1 { color: var(--albastru);-webkit-text-stroke: 0.4 var(--casete); font-size: clamp(2.618rem, 16vw, 6.854rem); }
+            .LogoMobileText2 { color: var(--galben); -webkit-text-stroke: 0.4px var(--casete); font-size: clamp(2.618rem, 16vw, 6.854rem); }
+            .LogoMobileText3 { color: var(--rosu);  -webkit-text-stroke: 0.4px var(--casete); font-size: clamp(2.618rem, 16vw, 6.854rem); }
+        .Description { padding: 1rem; line-height: 2.618rem; font-weight: 400; color: var(--text); font-size: 1.618rem;
+        @media (min-width: 1440px) { padding-left: 2rem; }
+        }
     
-        /*TODO Personalizarea caruselului */
     .Carousel { height: 222px; width: 333px; position: relative; display: block; margin: 50px auto; 
-        @media (min-width: 1080px) {
+        @media (min-width: 750px) {
             height: 333px; width: 555px;
         }
     }
-        .CarouselItem { position: absolute; top: 0; bottom: 0; left: 0; right: 0; padding: 25px 50px; opacity: 0; transition: all 0.5s ease-in-out; }
-            .Arrow { border: solid black; border-width: 0 3px 3px 0; display: inline-block; padding: 12px; }
-            .ArrowPrev { left: 30px; position: absolute; top: 50%; transform: translateY(-50%) rotate(135deg); }
-            .ArrowNext { right: 30px; position: absolute; top: 50%; transform: translateY(-50%) rotate(-45deg); }
+        .CarouselItem { position: absolute; top: 0; bottom: 0; left: 0; right: 0; padding: 25px 50px; opacity: 0; transition: all 0.5s ease; }
+            .Arrow { font-size: 1.618rem; color: var(--cta); padding: 1rem; background: var(--casete); border-radius: 4rem; 
+                @media (min-width: 750px) { padding: 30% 1rem; font-size: 4.236rem; }
+            }
+            .ArrowPrev { left: 1rem; position: absolute; top: 50%; transform: translateY(-50%) rotate(180deg); 
+                @media (min-width: 750px) { left: -4.5rem; }
+            }
+            .ArrowNext { right: 1rem; position: absolute; top: 50%; transform: translateY(-50%) rotate(0deg); 
+                @media (min-width: 750px) { right: -4.5rem; }
+            }
         [id^= "item"] { display: none; }
         .Item-1 { z-index: 2; opacity: 1; background: url('./p/1.webp'); 
-            @media (min-width: 1080px) { background: url('./d/1.webp'); }
+            @media (min-width: 750px) { background: url('./d/1.webp'); }
         }
         .Item-2 { background: url('./p/2.webp'); 
-            @media (min-width: 1080px) { background: url('./d/2.webp'); }
+            @media (min-width: 750px) { background: url('./d/2.webp'); }
         }
         .Item-3 { background: url('./p/3.webp'); 
-            @media (min-width: 1080px) { background: url('./d/3.webp'); }
+            @media (min-width: 750px) { background: url('./d/3.webp'); }
         }
         .Item-4 { background: url('./p/4.webp'); 
-            @media (min-width: 1080px) { background: url('./d/4.webp'); }    
+            @media (min-width: 750px) { background: url('./d/4.webp'); }    
         }
         .Item-5 { background: url('./p/5.webp');
-            @media (min-width: 1080px) { background: url('./d/5.webp'); }
+            @media (min-width: 750px) { background: url('./d/5.webp'); }
         }
         .Item-6 { background: url('./p/5.webp'); 
-            @media (min-width: 1080px) { background: url('./d/6.webp'); }
+            @media (min-width: 750px) { background: url('./d/6.webp'); }
         }
         .Item-7 { background: url('./p/7.webp'); 
-            @media (min-width: 1080px) { background: url('./d/7.webp'); }
+            @media (min-width: 750px) { background: url('./d/7.webp'); }
         }
         .Item-8 { background: url('./p/8.webp'); 
-            @media (min-width: 1080px) { background: url('./d/8.webp'); }
+            @media (min-width: 750px) { background: url('./d/8.webp'); }
         }
         .Item-9 { background: url('./p/9.webp'); 
-            @media (min-width: 1080px) { background: url('./d/9.webp'); }
+            @media (min-width: 750px) { background: url('./d/9.webp'); }
         }
         .Item-10 { background: url('./p/10.webp'); 
-            @media (min-width: 1080px) { background: url('./d/10.webp'); }
+            @media (min-width: 750px) { background: url('./d/10.webp'); }
         }
         .Item-11 { background: url('./p/11.webp'); 
-            @media (min-width: 1080px) { background: url('./d/11.webp'); }
+            @media (min-width: 750px) { background: url('./d/11.webp'); }
         }
         .Item-12 { background: url('./p/12.webp'); 
-            @media (min-width: 1080px) { background: url('./d/12.webp'); }
+            @media (min-width: 750px) { background: url('./d/12.webp'); }
         }
         .Item-13 { background: url('./p/13.webp'); 
-            @media (min-width: 1080px) { background: url('./d/13.webp'); }
+            @media (min-width: 750px) { background: url('./d/13.webp'); }
         }
         .Item-14 { background: url('./p/14.webp'); 
-            @media (min-width: 1080px) { background: url('./d/14.webp'); }
+            @media (min-width: 750px) { background: url('./d/14.webp'); }
         }
         .Item-15 { background: url('./p/15.webp'); 
-            @media (min-width: 1080px) { background: url('./d/15.webp'); }
+            @media (min-width: 750px) { background: url('./d/15.webp'); }
         }
         .Item-16 { background: url('./p/16.webp'); 
-            @media (min-width: 1080px) { background: url('./d/16.webp'); }
+            @media (min-width: 750px) { background: url('./d/16.webp'); }
         }
         *:target ~ .Item-1 { opacity: 0; }
         #item-1:target ~ .Item-1 { opacity: 1; }
@@ -158,9 +169,9 @@ a { color: var(--brand); text-decoration: none; }
 
     #accordion { color: var(--text); margin: 4rem auto; padding: 0; width: 90%; max-width: 30rem; }
         #accordion li { list-style: none; margin-bottom: 1.5rem; background: var(--casete); padding: 1rem; border-radius: 0.5rem; line-height: 1.5rem; }
-            .AccordionTitle { font-size: clamp(1.618rem, 6vw, 2.618rem); display: flex; align-items: center; justify-content: space-between; font-weight: 500; cursor: pointer; color: var(--text); }
+            .AccordionTitle { font-size: clamp(1.618rem, 6vw, 2.618rem); display: flex; align-items: center; justify-content: space-between; font-weight: 500; line-height: 3rem; cursor: pointer; color: var(--text); }
             .AccordionTitle + input[type="radio"] { display: none; }
-                .Down { transform: rotate(90deg); font-size: clamp(1.618rem, 4vw, 2.618rem); color: var(--cta); margin: 1rem;
+                .Down { transform: rotate(90deg); font-size: clamp(2.618rem, 16vw, 4.236rem); color: var(--cta); margin: 1rem;
                     :hover { transform: rotate(180deg); }
                 }
             .AccordionContent { background: var(--fundal); padding-left: 1.5rem; border-radius: 0.5rem; max-height: 0; overflow: hidden; transition: max-height 0.5s; }
