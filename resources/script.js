@@ -19,3 +19,10 @@ var currentScrollPos = window.pageYOffset;
   prevScrollpos = currentScrollPos;
 }
 */
+
+/*/ Selector multiplu al calendarului 
+$('#multiple-select').mobiscroll().select({
+  inputElement: document.getElementById('my-input'),
+  touchUi: false
+});
+*/

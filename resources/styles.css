@@ -1,3 +1,5 @@
+@charset "UTF-8";
+/*General*******************************************/
 :root {
   --fundal: #2B2A24;
   --brand: #BDAE7D;
@@ -7,31 +9,43 @@
   --albastru: #002B7F;
   --galben: #FCD116;
   --rosu: #CE1126;
+  --test: clamp(1.618rem, 3vw, 4.236rem);
+  --size-title: clamp(2.618rem, 8vw, 6.854rem);
+  --size-high: clamp(2.618rem, 8vw, 4.236rem);
+  --size-medium: camp(1.618rem, 8vw, 2.618rem);
+  --size-low: clamp(1rem, 8vw, 1.618rem) ;
 }
 
 .h1, h1 {
   font-size: 6.854rem;
   color: var(--text);
+  line-height: 7rem;
+  margin: 0;
+  padding: 0;
 }
 
 .h2, h2 {
   font-size: 4.236rem;
   color: var(--text);
+  line-height: 5rem;
 }
 
 .h3, h3 {
   font-size: 2.618rem;
   color: var(--text);
+  line-height: 3rem;
 }
 
 .h4, h4 {
   font-size: 1.618rem;
   color: var(--text);
+  line-height: 2rem;
 }
 
-.h5, h5 {
+.p, p {
   font-size: 1rem;
   color: var(--text);
+  line-height: 1.5rem;
 }
 
 @font-face {
@@ -87,9 +101,14 @@ strong {
   font-weight: 900;
 }
 
-a {
+a, .Link {
   color: var(--brand);
   text-decoration: none;
+}
+
+.Link {
+  color: var(--brand);
+  text-decoration: underline;
 }
 
 .ScreenReaders {
@@ -121,16 +140,17 @@ a {
   text-decoration: none;
   text-align: center;
   border-radius: 0.4rem;
+  border: 2px solid var(--cta);
 }
 .Button:hover {
   background: var(--casete);
   color: var(--text);
 }
 
-/***********************************************************************/
-.Navbar {
+/*Header-and-Footer*********************************/
+.Header .Navbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   background: var(--casete);
   position: fixed;
   top: 0;
@@ -140,8 +160,8 @@ a {
 }
 
 .Logo {
-  padding: 0;
   margin: 0;
+  padding: 0;
   display: none;
 }
 @media (min-width: 1080px) {
@@ -153,9 +173,12 @@ a {
 }
 
 .LogoH1 {
-  font-size: 2.168rem;
+  font-size: 2.618rem;
+  line-height: 2em;
   font-weight: 700;
   color: var(--text);
+  margin: 0;
+  padding: 0;
 }
 
 .Albastru {
@@ -209,6 +232,7 @@ a {
 .ListLinkText {
   font-size: 1.618rem;
   color: var(--text);
+  text-decoration: none;
 }
 
 .ListLinkIcon {
@@ -236,6 +260,226 @@ a {
   margin: 0 auto;
 }
 
+.Footer {
+  background: var(--casete);
+  width: 100%;
+  height: auto;
+}
+
+.ContainerFooter {
+  display: block;
+}
+@media (min-width: 750px) {
+  .ContainerFooter {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.Contact {
+  padding: 0 2rem;
+}
+
+.FooterLinks {
+  padding: 0 2rem;
+}
+
+.Copyrights {
+  text-align: center;
+}
+
+/*Pagina-Comentarii*********************************/
+.ContainerComment {
+  display: flex;
+  flex-direction: column;
+}
+
+.CommentTitle {
+  font-size: var(--size-medium);
+  line-height: calc(1.5 * var(--size-medium));
+  width: clamp(18rem, 40vw, 40rem);
+}
+
+.ContainerCommentForm {
+  margin: auto;
+}
+
+.CommentField {
+  margin: auto;
+  padding: 1.5rem;
+  font-size: var(--size-low);
+  line-height: calc(1.5 * var(--size-low));
+  height: 16rem;
+  width: clamp(18rem, 40vw, 40rem);
+  color: var(--text);
+  resize: none;
+  background: var(--casete);
+  border: none;
+  border-radius: 1rem;
+}
+
+.CommentButton {
+  margin: auto;
+}
+
+/*Pagina-Calendar***********************************/
+.Title {
+  font-size: var(--size-title);
+  line-height: calc(1.5 * var(--size-title));
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.Text {
+  font-size: var(--test);
+  line-height: calc(1.5 * var(--test));
+  font-weight: bold;
+}
+
+.CalendarSelector {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+  background: var(--casete);
+  color: var(--text);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select::after {
+  background: var(--cta);
+}
+
+.Calendar {
+  margin: clamp(1rem, 2vw, 5rem);
+  font-size: clamp(1rem, 4vw, 2.618rem);
+  color: var(--text);
+  text-align: center;
+}
+@media (min-width: 1210px) {
+  .Calendar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.WeekLine {
+  color: var(--brand);
+  display: flex;
+}
+
+.Week {
+  width: calc(4 * clamp(1rem, 4vw, 2.618rem));
+  height: 4.236rem;
+}
+
+.DayLine {
+  display: flex;
+}
+
+.Day {
+  width: calc(4 * clamp(1rem, 4vw, 2.618rem));
+  height: 4.236rem;
+}
+
+.SelectedEvent {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.TitleSecondary {
+  font-size: clamp(1.618rem, 5vw, 2.618rem);
+}
+
+.DescriptionSecondary {
+  margin: 1rem;
+}
+
+.EventContainer {
+  max-width: 30rem;
+  list-style: none;
+  margin-bottom: 1.5rem;
+  background: var(--casete);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  line-height: 1.5rem;
+}
+
+.EventHeader {
+  display: flex;
+  display: flex;
+  justify-content: space-between;
+}
+
+.EventTitle {
+  margin: 0;
+  padding: 0;
+}
+
+.EventCheck {
+  display: flex;
+}
+
+.CheckName {
+  font-size: 1rem;
+  color: var(--text);
+  display: none;
+}
+@media (min-width: 350px) {
+  .CheckName {
+    display: block;
+  }
+}
+@media (min-width: 750px) {
+  .CheckName {
+    display: flex;
+  }
+}
+
+.EventContent {
+  padding: 1rem;
+  background: var(--fundal);
+  pad: 1rem;
+  border-radius: 0.5rem;
+  line-height: 1.5rem;
+}
+
+.EventDescription {
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.OtherEvent {
+  font-size: clamp(1.618rem, 4vw, 2.618rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Pagina-Acasa**************************************/
 .Content {
   z-index: 1;
   padding-top: 100px;
@@ -243,7 +487,6 @@ a {
 
 .HeroSection {
   display: block;
-  padding: 2rem;
 }
 @media (min-width: 1440px) {
   .HeroSection {
@@ -252,32 +495,34 @@ a {
   }
 }
 
+/*/Mobile View*/
 .LogoMobile {
   text-align: center;
-  line-height: clamp(1.618rem, 7vw, 2.618rem);
+  line-height: calc(1.5 * var(--size-title));
 }
 @media (min-width: 1080px) {
   .LogoMobile {
-    text-align: left;
+    display: none;
   }
 }
 
 .LogoMobileText1 {
   color: var(--albastru);
+  font-size: var(--size-title);
   -webkit-text-stroke: 0.4 var(--casete);
-  font-size: clamp(2.618rem, 16vw, 6.854rem);
+  font-size: var(--size-title);
 }
 
 .LogoMobileText2 {
   color: var(--galben);
+  font-size: var(--size-title);
   -webkit-text-stroke: 0.4px var(--casete);
-  font-size: clamp(2.618rem, 16vw, 6.854rem);
 }
 
 .LogoMobileText3 {
   color: var(--rosu);
+  font-size: var(--size-title);
   -webkit-text-stroke: 0.4px var(--casete);
-  font-size: clamp(2.618rem, 16vw, 6.854rem);
 }
 
 .Description {
@@ -293,17 +538,32 @@ a {
   }
 }
 
+/*/Desktop View*/
+@media (min-width: 1440px) {
+  .HeroSectionColumn {
+    float: left;
+    width: 50%;
+  }
+}
+
 .Carousel {
   height: 222px;
   width: 333px;
   position: relative;
-  display: block;
-  margin: 50px auto;
+  margin: 0 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media (min-width: 750px) {
   .Carousel {
     height: 333px;
     width: 555px;
+  }
+}
+@media (min-width: 1440px) {
+  .Carousel {
+    margin: 0 8rem;
   }
 }
 
@@ -547,7 +807,7 @@ a {
   color: var(--text);
 }
 
-.AccordionTitle + input[type=radio] {
+.AccordionTitle + input[type=checkbox] {
   display: none;
 }
 
@@ -563,19 +823,99 @@ a {
 
 .AccordionContent {
   background: var(--fundal);
-  padding-left: 1.5rem;
+  padding: 0 1.5rem;
   border-radius: 0.5rem;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s;
 }
 
-.AccordionTitle + input[type=radio]:checked + .AccordionContent {
+.AccordionTitle + input[type=checkbox]:checked + .AccordionContent {
   max-height: 40rem;
 }
 
-.Footer {
-  background: var(--casete);
-  width: 100%;
-  height: 2.618rem;
+/*Print*********************************************/
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media print {
+  * {
+    background-image: none;
+    background: white;
+    color: black;
+  }
+  @page {
+    margin: 2cm;
+  }
+  @page :first {
+    margin-top: 3cm;
+  }
+  @page :left {
+    margin-right: 3cm;
+  }
+  @page :right {
+    margin-left: 3cm;
+  }
+  html {
+    background: white;
+    font-size: 12pt;
+    line-height: 1.5em;
+  }
+  a:link, a:visited {
+    color: #00f;
+    background: transparent;
+    font-weight: bold;
+  }
+  a:not([href^=http]):after {
+    content: " (" attr(href) ")";
+    font-size: 0.9em;
+  }
+  a[href^="/"]:after {
+    content: " (https://dapcred.netlify.app" attr(href) ") ";
+  }
+  /*a:not(:local-link):after { content: " (" attr(href) ")»"; }*/
+  a:after > img {
+    content: "";
+  }
+  body::after {
+    content: "Copyright © Irimia David, toate drepturile rezervate.";
+    display: block;
+    text-align: center;
+  }
+  .Container {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+  h1 + h2 {
+    page-break-before: avoid;
+  }
+  table, pre, img, svg, blockquote, a {
+    -moz-column-break-inside: avoid;
+         break-inside: avoid;
+  }
+  ul, ol, dl {
+    page-break-before: avoid;
+  }
+  .TitlulPaginii {
+    padding-top: 0.5em;
+  }
+  .ListaText {
+    display: inline;
+    color: #00f;
+    white-space: normal;
+    text-decoration: underline;
+  }
 }/*# sourceMappingURL=styles.css.map */
