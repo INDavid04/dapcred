@@ -54,7 +54,8 @@
 html { font-family: 'Bitter', serif; font-size: 16px; line-height: 1.5rem; }
 
 body { display: block; background: var(--fundal); min-height: 100vh; margin: 0; text-rendering: optimizeSpeed; }
-
+/*/Adaug svg in html ca sa ii schimb fill on hover cu prop fill: currentColor;*/
+svg { fill: currentColor; } /// :hover { color: var(--cta); fill: var(--cta); }
 img, picture { max-width: 100%; display: block; }
 
 input, button, textarea, select { font: inherit; }

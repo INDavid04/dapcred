@@ -88,6 +88,11 @@ body {
   text-rendering: optimizeSpeed;
 }
 
+/*/Adaug svg in html ca sa ii schimb fill on hover cu prop fill: currentColor;*/
+svg {
+  fill: currentColor;
+}
+
 img, picture {
   max-width: 100%;
   display: block;
